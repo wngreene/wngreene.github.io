@@ -3,9 +3,9 @@ title: "About"
 layout: default
 ---
 
-<div style="float: right; padding:
+<div style="float: left; padding:
 	    10px; border: 0px solid #ccc;">
-  <img alt="photo" src="{{site.baseurl}}/assets/me.jpg" width="240"/>
+  <img alt="photo" src="assets/me.jpg" width="240"/>
   <br>
 </div>
 

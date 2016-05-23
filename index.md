@@ -11,6 +11,5 @@ layout: default
   <br>
 </div>
 
-<br>
 {% include bio.md %}
 <br>

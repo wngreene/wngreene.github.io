@@ -16,12 +16,10 @@ class Publication < Liquid::Block
 
   def render(context)
     @yaml = YAML::load(super)
-    # p 'YAML: ', @yaml
 
     site = context.registers[:site]
     md = site.getConverterImpl(Jekyll::Converters::Markdown)
     
-    @icon = @yaml.fetch('icon','')
     @imgsrc = @yaml.fetch('imgsrc','')
     @title = @yaml.fetch('title','')
     @authors = @yaml.fetch('authors','')
@@ -38,16 +36,18 @@ class Publication < Liquid::Block
     if @title_type == 'project' then
       @title = "<h2>#{@title}</h2><br>"
     else
-      @title = "<p><strong>#{@title}</strong><br>"
+      @title = "<strong>#{@title}</strong><br>"
     end
     
-    # p 'TITLE:', @title 
-    # p 'CONF: ', @conf
-    # p 'LINKS', @links
-    # p 'AUTHORS: ', @authors
-    # p 'AUTHORS: ', @authors == "" ? "" : "test"
-
-    out = "<div class=\"publication\">", "<div>", @icon == '' ? "<img alt=\"project-thumb\" src=\"#{@imgsrc}\" style=\"float:right\"/></div><div>" : "<i class=\"#{@icon}\" style=\"float:left\" width=\"110px\" ></i>" , @title == "" ? "" : "#{@title}", @authors == "" ? "" : "#{@authors}<br>", @conf == '' ? '' : "#{@conf}<br>", @links == '' ? '' : "#{@links}<br>" ,  "</p>" , "</div></div>"
+    out = "<table width=\"100%\" border=\"0\" cellpadding=\"5\">", 
+    "<tr><td align=\"center\" valign=\"center\" width=\"1\" height=\"1\">",
+    "<img src=\"#{@imgsrc}\" style=\"float:left\" width=\"110px\"/></td>",
+    "<td align=\"left\" valign=\"center\" height=\"1\">",
+    "#{@title}",
+    "#{@authors}<br>",
+    "#{@conf}<br>",
+    "#{@links}",
+    "</td></tr>"
     
     return out.join("")
     

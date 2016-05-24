@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "W. Nicholas Greene"
 layout: default
 ---
 
@@ -7,7 +7,7 @@ layout: default
 
 <div style="float: left; padding:
 	    10px; border: 0px solid #ccc;">
-  <img alt="photo" src="assets/me.jpg" width="240"/>
+  <img alt="photo" src="assets/me.jpg" width="200"/>
   <br>
 </div>
 

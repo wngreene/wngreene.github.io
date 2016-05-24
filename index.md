@@ -13,3 +13,6 @@ layout: default
 
 {% include bio.md %}
 <br>
+
+## Recent
+{% include pubs/mlm_icra_2016.md %}

@@ -1,2 +1,17 @@
 name: W. Nicholas Greene
 markdown: kramdown
+
+links:
+  # People
+  wng: http://people.csail.mit.edu/wng
+  nickroy: https://www.csail.mit.edu/user/902
+
+  # Organizations
+  mit: http://www.mit.edu
+  rrg: http://groups.csail.mit.edu/rrg
+  csail: http://www.csail.mit.edu
+  aeroastro: http://aeroastro.mit.edu
+  draper: http://www.draper.com
+  lincoln: http://www.ll.mit.edu
+  princetonee: http://www.ee.princeton.edu
+  princeton: http://www.princeton.edu

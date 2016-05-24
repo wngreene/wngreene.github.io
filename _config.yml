@@ -16,3 +16,11 @@ links:
   lincoln: http://www.ll.mit.edu
   princetonee: http://www.ee.princeton.edu
   princeton: http://www.princeton.edu
+
+sitemap:
+- text: About
+  url: /index.html
+- text: Publications
+  url: /pubs.html
+- cv: CV
+  url: /data/wnickgreene_cv.pdf

@@ -1,13 +1,16 @@
-I am a graduate student in the [Robust Robotics Group]({{site.links.rrg}}) at
+I am a PhD student in the [Robust Robotics Group]({{site.links.rrg}}) at
 the
-[Computer Science and Artificial Intelligence Laboratory (CSAIL)]({{site.links.csail}})
-at [MIT]({{site.links.mit}}), interested in robotics, computer vision, and 3D
-perception. My research advisers are
-[Professor Nicholas Roy]({{site.links.nickroy}}) in the
-[Department of Aeronautics and Astronautics]({{site.links.aeroastro}}) and Paul
-DeBitetto of [Draper](site.links.draper) where I am a Draper Fellow. My current
-interests are in developing aerial robots capable of autonomously navigating and
-mapping complex, dynamic, and uncertain environments with only onboard sensing.
+[Computer Science and Artificial Intelligence Laboratory (CSAIL)]({{site.links.csail}}) at
+[MIT]({{site.links.mit}}), interested in robotics, computer vision, and 3D
+perception. My research adviser
+is [Professor Nicholas Roy]({{site.links.nickroy}}) in
+the
+[Department of Aeronautics and Astronautics]({{site.links.aeroastro}}). During
+my master's studies I was additionally advised by Paul DeBitetto and Ted Steiner
+of [Draper](site.links.draper) where I was a Draper Fellow. My current interests
+are in developing aerial robots capable of autonomously navigating and mapping
+complex, dynamic, and uncertain environments with only onboard sensing. I also
+have a growing interested in augmented and virtual reality.
 
 Prior to joining [CSAIL]({{site.links.csail}}), I was an Assistant Technical
 Staff member in the Advanced Sensor Techniques Group at

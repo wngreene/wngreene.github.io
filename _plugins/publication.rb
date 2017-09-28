@@ -18,7 +18,7 @@ class Publication < Liquid::Block
     @yaml = YAML::load(super)
 
     site = context.registers[:site]
-    md = site.getConverterImpl(Jekyll::Converters::Markdown)
+    md = site.find_converter_instance(Jekyll::Converters::Markdown)
     
     @imgsrc = @yaml.fetch('imgsrc','')
     @title = @yaml.fetch('title','')

@@ -7,7 +7,7 @@ layout: default
 
 <div style="float: left; padding:
 	    10px; border: 0px solid #ccc;">
-  <img alt="photo" src="assets/me.jpg" width="200"/>
+  <img alt="photo" src="assets/me.jpg" width="300"/>
   <br>
 </div>
 

@@ -1,12 +1,9 @@
 I am a PhD student in the [Robust Robotics Group]({{site.links.rrg}}) at
 the
-[MIT]({{site.links.mit}}) [Computer Science and Artificial Intelligence Laboratory (CSAIL)]({{site.links.csail}}),
-interested in robotics, computer vision, and 3D perception. My research adviser
-is [Professor Nicholas Roy]({{site.links.nickroy}}) in
-the
-[Department of Aeronautics and Astronautics]({{site.links.aeroastro}}). During
-my Master's studies I was co-advised by Pete Lommel and Ted Steiner
-of [Draper](site.links.draper) where I was a Draper Fellow.
+[MIT]({{site.links.mit}}) [Computer Science and Artificial Intelligence Laboratory (CSAIL)]({{site.links.csail}}) under
+[Professor Nicholas Roy]({{site.links.nickroy}}). During my Master's studies I
+was co-advised by Pete Lommel and Ted Steiner of [Draper](site.links.draper)
+where I was a Draper Fellow.
 
 My current research is focused on robotics, computer vision, and 3D perception,
 specifically developing aerial robots capable of autonomously mapping and

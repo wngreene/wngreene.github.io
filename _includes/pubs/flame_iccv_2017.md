@@ -4,6 +4,6 @@ imgsrc: "assets/flame.png"
 title: "FLaME: Fast Lightweight Mesh Estimation using Variational Smoothing on Delaunay Graphs"
 conf: "ICCV 2017"
 authors: "[W. Nicholas Greene]({{site.links.wng}}) and [Nicholas Roy]({{site.links.nickroy}})"
-links: "[ [pdf](data/papers/greene_iccv17.pdf), [video](https://youtu.be/vB_F-Sj0AX0), [code](https://github.com/robustrobotics/flame) ]"
+links: "[ [pdf](data/papers/greene_iccv17.pdf), [video](https://youtu.be/vB_F-Sj0AX0), [slides](data/slides/2017.09.28_iros_presentation_flame_4x3_nobackup.pdf), [code](https://github.com/robustrobotics/flame) ]"
 {% endpublication %}
 

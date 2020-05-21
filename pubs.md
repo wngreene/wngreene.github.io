@@ -4,6 +4,7 @@ layout: default
 ---
 
 # Publications
+{% include pubs/metric_mono_slam_icra_2020.md %}
 {% include pubs/flame_iccv_2017.md %}
 {% include pubs/sm_thesis.md %}
 {% include pubs/mlm_icra_2016.md %}

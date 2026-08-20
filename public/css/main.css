@@ -90,6 +90,12 @@ a:hover {
 
 /* Masthead: rail + intro ------------------------------------------------- */
 
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .masthead {
   display: grid;
   grid-template-columns: var(--rail) minmax(0, 1fr);
@@ -279,6 +285,10 @@ a:hover {
   min-width: 0;
 }
 
+.entry-body :where(p) {
+  margin: 0;
+}
+
 .entry-meta {
   font-size: 0.71875rem;
   font-weight: 500;
@@ -318,6 +328,7 @@ a:hover {
 .edu .entry-note {
   display: flex;
   flex-direction: column;
+  line-height: 1.45;
   color: var(--muted);
   margin-top: 3px;
 }
@@ -366,7 +377,13 @@ a:hover {
     gap: 32px;
   }
 
-  .masthead {
+  main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.masthead {
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
   }

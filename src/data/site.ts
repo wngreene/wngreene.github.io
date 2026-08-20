@@ -6,6 +6,7 @@ export const SITE = {
   email: 'wng@csail.mit.edu',
   github: 'https://github.com/wngreene',
   linkedin: 'https://www.linkedin.com/in/wnickgreene',
+  x: 'https://x.com/wnickgreene',
   cv: '/data/wnickgreene_cv.pdf',
 };
 

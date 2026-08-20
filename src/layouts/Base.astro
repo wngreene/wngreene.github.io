@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../data/site';
+import '../styles/main.css';
 import SocialLinks from '../components/SocialLinks.astro';
 
 interface Props {
@@ -27,7 +28,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,600&display=swap"
     />
-    <link rel="stylesheet" href="/css/main.css" />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />

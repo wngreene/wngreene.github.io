@@ -113,6 +113,12 @@ a:hover {
   box-shadow: 0 0 0 1px var(--ring);
 }
 
+.rail-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .rail-nav {
   display: flex;
   flex-direction: column;
@@ -131,6 +137,31 @@ a:hover {
 .rail-nav a[aria-current='page'] {
   color: var(--ink);
   text-decoration-color: rgba(var(--ink-rgb), 0.30);
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.social a {
+  display: inline-flex;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.social a:hover {
+  color: var(--accent);
+}
+
+.social svg {
+  display: block;
+}
+
+/* Nudged to sit level with the nav's letterspaced caps above it. */
+.rail-social {
+  margin-top: 2px;
 }
 
 .intro {
@@ -281,7 +312,8 @@ a:hover {
 
 .footer-links {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 18px;
   font-weight: 500;
 }
 
@@ -316,7 +348,13 @@ a:hover {
     flex: 0 0 104px;
   }
 
-  .rail-nav {
+  .rail-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rail-nav {
     gap: 8px;
   }
 

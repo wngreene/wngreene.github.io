@@ -41,7 +41,6 @@ const pubs = (await getCollection('publications')).sort(
   <section>
     <div class="section-head">
       <h2>Recent</h2>
-      <a class="caps" href="/pubs.html">All seven</a>
     </div>
     <div class="pub-list">
       {pubs.map((pub) => <Publication {...pub.data} />)}

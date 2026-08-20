@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../data/site';
+import SocialLinks from '../components/SocialLinks.astro';
 
 interface Props {
   title: string;
@@ -49,16 +50,18 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
             width="152"
             height="154"
           />
-          <nav class="rail-nav">
-            <a href="/" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>About</a>
-            <a
-              href="/pubs.html"
-              aria-current={Astro.url.pathname === '/pubs.html' ? 'page' : undefined}
-              >Publications</a
-            >
-            <a href={SITE.cv}>CV</a>
-            <a href={SITE.github}>GitHub</a>
-          </nav>
+          <div class="rail-links">
+            <nav class="rail-nav">
+              <a href="/" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>About</a>
+              <a
+                href="/pubs.html"
+                aria-current={Astro.url.pathname === '/pubs.html' ? 'page' : undefined}
+                >Publications</a
+              >
+              <a href={SITE.cv}>CV</a>
+            </nav>
+            <SocialLinks size={18} class="rail-social" />
+          </div>
         </div>
         <div class="intro">
           <slot name="intro" />
@@ -73,9 +76,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
         <span class="footer-name">W. Nicholas Greene</span>
         <div class="footer-links">
           <a href={`mailto:${SITE.email}`}>Email</a>
-          <a href={SITE.github}>GitHub</a>
-          <a href={SITE.linkedin}>LinkedIn</a>
-          <a href={SITE.x}>X</a>
+          <SocialLinks size={16} />
         </div>
       </footer>
     </div>

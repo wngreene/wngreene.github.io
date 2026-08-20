@@ -6,6 +6,10 @@
 Pushing to `master` builds and deploys automatically via GitHub Actions
 (`.github/workflows/deploy.yml`). Build output is never committed.
 
+This requires **Settings → Pages → Source = "GitHub Actions"**. If it is ever
+set back to "Deploy from a branch", the site breaks: there is no built HTML in
+the repository for Pages to serve.
+
 ## Local development
 
 ```bash
@@ -40,7 +44,12 @@ cite `/pubs.html` and `/data/papers/*.pdf`. Do not change this.
 
 ## History
 
-Pre-Astro state is preserved in two tags:
+The site was built with Jekyll until August 2026. Source lived on the `dev`
+branch, was built locally, and the output was hand-copied onto `master`, which
+Pages served directly. Two tags preserve that state:
 
 - `pre-astro-master` — the built HTML formerly served from `master`
-- `jekyll-dev-final` — the Jekyll source formerly on the `dev` branch
+- `jekyll-dev-final` — the last commit of the Jekyll source on `dev`
+
+The `dev` branch is retained but no longer used. Nothing reads from it, and
+changes made there have no effect on the site.

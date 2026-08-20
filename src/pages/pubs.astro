@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
 import Publication from '../components/Publication.astro';
 
 const pubs = (await getCollection('publications')).sort(
@@ -11,7 +12,7 @@ const pubs = (await getCollection('publications')).sort(
 <Base title="Publications" description="Publications by W. Nicholas Greene.">
   <Fragment slot="intro">
     <h1>Publications</h1>
-    <div class="caps role">Robotics &middot; Computer Vision &middot; 3D Perception</div>
+    <div class="caps role">{SITE.tagline}</div>
   </Fragment>
 
   <section>

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
 import Experience from '../components/Experience.astro';
 
 const roles = (await getCollection('experience')).sort(
@@ -11,7 +12,7 @@ const roles = (await getCollection('experience')).sort(
 <Base title="Experience" description="Work experience of W. Nicholas Greene.">
   <Fragment slot="intro">
     <h1>Experience</h1>
-    <div class="caps role">Robotics &middot; Computer Vision &middot; 3D Perception</div>
+    <div class="caps role">{SITE.tagline}</div>
   </Fragment>
 
   <section>

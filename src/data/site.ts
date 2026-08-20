@@ -1,8 +1,10 @@
 /** Site-wide metadata. */
 export const SITE = {
   title: 'W. Nicholas Greene',
+  /* Shown under the name on every page. */
+  tagline: 'AI · ML · Robotics',
   description:
-    'W. Nicholas Greene — researcher and engineer in robotics, computer vision, and 3D perception.',
+    'W. Nicholas Greene — research engineer working in AI, ML, robotics, and 3D perception.',
   github: 'https://github.com/wngreene',
   linkedin: 'https://www.linkedin.com/in/wnickgreene',
   x: 'https://x.com/wnickgreene',

@@ -8,6 +8,7 @@
   role: "Co-Founder"
   company: "Stealth Startup"
   dates: "Feb 2026 – Present"
+  logo: /assets/stealth_logo.jpg
   description: "Stealth AI startup."
 
 - id: zoox
@@ -33,6 +34,7 @@
   company: "Strio AI"
   dates: "Jan 2021 – Mar 2022"
   location: "Cambridge, MA"
+  logo: /assets/stealth_logo.jpg
   description: >-
     Built state estimation and perception systems for agricultural robots.
     Acquired by Zoox.

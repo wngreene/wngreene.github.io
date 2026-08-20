@@ -1,8 +1,8 @@
 name: Deploy site
 
 on:
+  # Build on every branch so changes are validated before they reach master.
   push:
-    branches: [master]
   pull_request:
   workflow_dispatch:
 

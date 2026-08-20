@@ -16,7 +16,9 @@ export const SITE = {
  * defined exactly once. Mirrors the `links:` map from the old _config.yml.
  */
 export const PEOPLE = {
-  wng: { name: 'W. Nicholas Greene', url: 'http://people.csail.mit.edu/wng' },
+  // No url: this is the site owner, and the old CSAIL page 301s straight
+  // back here, so every author credit was a link to the current page.
+  wng: { name: 'W. Nicholas Greene' },
   nickroy: { name: 'Nicholas Roy', url: 'https://www.csail.mit.edu/user/902' },
   kyel: { name: 'Kyel Ok', url: 'http://www.korobotics.com' },
   lommel: { name: 'Peter Lommel' },

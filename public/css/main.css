@@ -28,6 +28,7 @@
 
   --shell: 960px;
   --rail: 152px;
+  --entry-media: 120px;
   --rail-gap: 42px;
   --measure: 540px;
 }
@@ -244,11 +245,11 @@ main {
 }
 
 .pub {
-  grid-template-columns: 138px minmax(0, 1fr);
+  grid-template-columns: var(--entry-media) minmax(0, 1fr);
 }
 
 .edu {
-  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-columns: var(--entry-media) minmax(0, 1fr);
   /* Top-aligned, as on LinkedIn. Centring made the logo drift down beside
      the middle of a four-line entry while sitting level on a two-line one. */
   align-items: start;
@@ -261,7 +262,7 @@ main {
 /* Experience shares the education card: logo left, top-aligned, roman text
    on one even rhythm. */
 .exp {
-  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-columns: var(--entry-media) minmax(0, 1fr);
   align-items: start;
 }
 
@@ -295,9 +296,10 @@ main {
 }
 
 .edu-logo {
-  width: 44px;
-  height: 44px;
+  width: 64px;
+  height: 64px;
   display: block;
+  margin: 0 auto;
   border-radius: 3px;
   object-fit: contain;
 }
@@ -315,7 +317,7 @@ main {
 }
 
 .pub-thumb {
-  width: 138px;
+  width: var(--entry-media);
   display: block;
   border-radius: 2px;
   box-shadow: 0 0 0 1px var(--ring);

@@ -3,7 +3,6 @@ export const SITE = {
   title: 'W. Nicholas Greene',
   description:
     'W. Nicholas Greene — researcher and engineer in robotics, computer vision, and 3D perception.',
-  email: 'wng@csail.mit.edu',
   github: 'https://github.com/wngreene',
   linkedin: 'https://www.linkedin.com/in/wnickgreene',
   x: 'https://x.com/wnickgreene',

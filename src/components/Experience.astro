@@ -1,31 +1,29 @@
 ---
+import EntryMedia from './EntryMedia.astro';
 interface Props {
   role: string;
   company: string;
   dates: string;
   location?: string;
   logo?: string;
-  monogram: string;
   description?: string;
+  links?: { label: string; url: string }[];
 }
 
-const { role, company, dates, location, logo, monogram, description } = Astro.props;
+const { role, company, dates, location, logo, description, links = [] } = Astro.props;
 ---
 
 <article class="card exp">
-  {
-    logo ? (
-      <img class="edu-logo" src={logo} alt="" width="64" height="64" loading="lazy" />
-    ) : (
-      <span class="edu-logo edu-monogram" aria-hidden="true">
-        {monogram}
-      </span>
-    )
-  }
+  <EntryMedia logo={logo} label={company} />
   <div class="entry-body">
     <h3 class="entry-title">{role}</h3>
     <p class="entry-sub">{company}</p>
     <p class="exp-dates">{dates}{location && <span class="sep"> · </span>}{location}</p>
     {description && <p class="exp-desc">{description}</p>}
+    {links.length > 0 && (
+      <p class="pub-links">
+        [&thinsp; {links.map((l, i) => (<>{i > 0 && ', '}<a href={l.url}>{l.label}</a></>))} &thinsp;]
+      </p>
+    )}
   </div>
 </article>

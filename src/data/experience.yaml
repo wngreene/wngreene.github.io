@@ -1,6 +1,6 @@
 # Transcribed from LinkedIn. `sortYear` is the year the role ended (9999 for
 # a current role) and is what merges this list with publications on the home
-# page. `monogram` is the fallback tile until a real logo is supplied.
+# page. Entries without a `logo` render a crossed-box placeholder.
 
 - id: stealth
   order: 1
@@ -8,7 +8,6 @@
   role: "Co-Founder"
   company: "Stealth Startup"
   dates: "Feb 2026 – Present"
-  monogram: "S"
   description: "Stealth AI startup."
 
 - id: zoox
@@ -19,7 +18,6 @@
   dates: "Mar 2022 – Feb 2026"
   location: "San Francisco Bay Area"
   logo: /assets/zoox_logo.jpg
-  monogram: "Z"
   description: >-
     Led a cross-functional team that built a voxel-based occupancy network for
     short-range 3D perception in autonomous vehicles, fusing Lidar, Radar, and
@@ -35,10 +33,11 @@
   company: "Strio AI"
   dates: "Jan 2021 – Mar 2022"
   location: "Cambridge, MA"
-  monogram: "SA"
   description: >-
     Built state estimation and perception systems for agricultural robots.
     Acquired by Zoox.
+  links:
+    - { label: "Strio.AI joins Zoox", url: "https://zoox.com/journal/strio-ai-joins-zoox" }
 
 - id: niantic
   order: 4
@@ -48,7 +47,6 @@
   dates: "Sep 2018 – Jan 2019"
   location: "Sunnyvale, CA"
   logo: /assets/niantic_logo.jpg
-  monogram: "N"
   description: >-
     Developed robust place recognition and localization algorithms for
     large-scale augmented reality on mobile devices.
@@ -60,7 +58,6 @@
   company: "Draper"
   dates: "Sep 2014 – Sep 2016"
   logo: /assets/draper_logo.jpg
-  monogram: "D"
   description: >-
     Developed real-time, dense 3D simultaneous localization and mapping (SLAM)
     using passive monocular cameras for use on micro-aerial vehicles (MAVs).
@@ -73,7 +70,6 @@
   dates: "Oct 2010 – Jul 2014"
   location: "Greater Boston"
   logo: /assets/lincoln_logo.jpg
-  monogram: "LL"
   description: >-
     Contributed to research and development of passive sonar algorithms in the
     Advanced Sensor Techniques Group.

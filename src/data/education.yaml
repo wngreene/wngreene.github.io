@@ -1,13 +1,12 @@
 # Wording follows LinkedIn, abbreviated to PhD rather than spelled out.
 # The SM is folded into the PhD there, so it is not a separate entry.
-# `monogram` is the fallback tile for any entry added without a `logo`.
+# Entries without a `logo` render a crossed-box placeholder.
 
 - id: phd-mit
   order: 1
   institution: "Massachusetts Institute of Technology"
   degree: "PhD, Aeronautics and Astronautics, Autonomous Systems"
   logo: /assets/mit_logo.jpg
-  monogram: "MIT"
   notes:
     - "Advised by Prof. Nicholas Roy"
     - "Robust Robotics Group, CSAIL"
@@ -17,4 +16,3 @@
   institution: "Princeton University"
   degree: "BSE, Electrical Engineering"
   logo: /assets/princeton_logo.jpg
-  monogram: "P"

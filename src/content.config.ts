@@ -29,10 +29,9 @@ const education = defineCollection({
     order: z.number().int().positive(),
     institution: z.string(),
     degree: z.string(),
-    // Real institution mark when one is available; otherwise `monogram`
-    // renders a lettered tile in its place.
+    // Real institution mark when one is available; entries without one
+    // render a crossed-box placeholder.
     logo: z.string().startsWith('/').optional(),
-    monogram: z.string().max(4),
     notes: z.array(z.string()).default([]),
   }),
 });
@@ -49,8 +48,8 @@ const experience = defineCollection({
     dates: z.string(),
     location: z.string().optional(),
     logo: z.string().startsWith('/').optional(),
-    monogram: z.string().max(4),
     description: z.string().optional(),
+    links: z.array(z.object({ label: z.string(), url: z.string() })).default([]),
   }),
 });
 

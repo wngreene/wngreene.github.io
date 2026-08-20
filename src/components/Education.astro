@@ -1,25 +1,17 @@
 ---
+import EntryMedia from './EntryMedia.astro';
 interface Props {
   institution: string;
   degree: string;
   logo?: string;
-  monogram: string;
   notes?: string[];
 }
 
-const { institution, degree, logo, monogram, notes = [] } = Astro.props;
+const { institution, degree, logo, notes = [] } = Astro.props;
 ---
 
 <article class="card edu">
-  {
-    logo ? (
-      <img class="edu-logo" src={logo} alt="" width="64" height="64" loading="lazy" />
-    ) : (
-      <span class="edu-logo edu-monogram" aria-hidden="true">
-        {monogram}
-      </span>
-    )
-  }
+  <EntryMedia logo={logo} label={institution} />
   <div class="entry-body">
     <h3 class="entry-title">{institution}</h3>
     <p class="entry-sub">{degree}</p>

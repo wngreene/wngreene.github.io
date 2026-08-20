@@ -249,7 +249,13 @@ main {
 
 .edu {
   grid-template-columns: 44px minmax(0, 1fr);
-  align-items: center;
+  /* Top-aligned, as on LinkedIn. Centring made the logo drift down beside
+     the middle of a four-line entry while sitting level on a two-line one. */
+  align-items: start;
+}
+
+.edu-logo {
+  margin-top: 2px;
 }
 
 .edu-logo {
@@ -354,7 +360,7 @@ main {
   font-style: normal;
   line-height: 1.45;
   color: var(--muted);
-  margin-top: 7px;
+  margin-top: 10px;
 }
 
 .pub-links {

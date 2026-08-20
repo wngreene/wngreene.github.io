@@ -275,7 +275,13 @@ main {
   line-height: 1.45;
 }
 
-.exp .entry-sub {
+.exp /* The site owner in an author list. 600 italic is loaded explicitly, so
+   this is a real face rather than a synthesised slant. */
+.author-self {
+  font-weight: 600;
+}
+
+.entry-sub {
   font-style: normal;
   line-height: 1.45;
 }
@@ -351,6 +357,12 @@ main {
   text-wrap: pretty;
 }
 
+/* The site owner in an author list. 600 italic is loaded explicitly, so
+   this is a real face rather than a synthesised slant. */
+.author-self {
+  font-weight: 600;
+}
+
 .entry-sub {
   line-height: 1.4;
   font-size: 0.9375rem;
@@ -380,7 +392,13 @@ main {
   line-height: 1.45;
 }
 
-.edu .entry-sub {
+.edu /* The site owner in an author list. 600 italic is loaded explicitly, so
+   this is a real face rather than a synthesised slant. */
+.author-self {
+  font-weight: 600;
+}
+
+.entry-sub {
   font-style: normal;
   line-height: 1.45;
 }

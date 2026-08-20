@@ -25,7 +25,13 @@ const people = authors.map((key) => PEOPLE[key as keyof typeof PEOPLE]);
         people.map((person, i) => (
           <>
             {i > 0 && (i === people.length - 1 ? (people.length > 2 ? ', and ' : ' and ') : ', ')}
-            {'url' in person && person.url ? <a href={person.url}>{person.name}</a> : person.name}
+            {'url' in person && person.url ? (
+              <a href={person.url}>{person.name}</a>
+            ) : 'self' in person && person.self ? (
+              <b class="author-self">{person.name}</b>
+            ) : (
+              person.name
+            )}
           </>
         ))
       }

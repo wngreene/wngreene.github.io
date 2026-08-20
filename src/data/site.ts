@@ -18,10 +18,13 @@ export const SITE = {
 export const PEOPLE = {
   // No url: this is the site owner, and the old CSAIL page 301s straight
   // back here, so every author credit was a link to the current page.
-  wng: { name: 'W. Nicholas Greene' },
+  wng: { name: 'W. Nicholas Greene', self: true },
   nickroy: { name: 'Nicholas Roy', url: 'https://www.csail.mit.edu/user/902' },
   kyel: { name: 'Kyel Ok', url: 'http://www.korobotics.com' },
   lommel: { name: 'Peter Lommel' },
-} as const satisfies Record<string, { name: string; url?: string }>;
+} as const satisfies Record<
+  string,
+  { name: string; url?: string; self?: boolean }
+>;
 
 export type PersonKey = keyof typeof PEOPLE;

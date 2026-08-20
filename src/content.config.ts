@@ -23,4 +23,18 @@ const publications = defineCollection({
   }),
 });
 
-export const collections = { publications };
+const education = defineCollection({
+  loader: file('src/data/education.yaml'),
+  schema: z.object({
+    order: z.number().int().positive(),
+    institution: z.string(),
+    degree: z.string(),
+    // Real institution mark when one is available; otherwise `monogram`
+    // renders a lettered tile in its place.
+    logo: z.string().startsWith('/').optional(),
+    monogram: z.string().max(4),
+    notes: z.array(z.string()).default([]),
+  }),
+});
+
+export const collections = { publications, education };

@@ -218,22 +218,51 @@ a:hover {
   text-transform: uppercase;
 }
 
-.pub-list {
+.entry-list {
   display: flex;
   flex-direction: column;
   gap: 9px;
   margin-top: 14px;
 }
 
-.pub {
+/* Shared entry card. .pub and .edu differ only in their column layout. */
+.card {
   display: grid;
-  grid-template-columns: 138px minmax(0, 1fr);
   gap: 20px;
   align-items: start;
   padding: 16px;
   background: var(--surface);
   border: 1px solid var(--rule);
   border-radius: 3px;
+}
+
+.pub {
+  grid-template-columns: 138px minmax(0, 1fr);
+}
+
+.edu {
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items: center;
+}
+
+.edu-logo {
+  width: 44px;
+  height: 44px;
+  display: block;
+  border-radius: 3px;
+  object-fit: contain;
+}
+
+.edu-monogram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  box-shadow: 0 0 0 1px var(--ring);
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
 }
 
 .pub-thumb {
@@ -243,14 +272,14 @@ a:hover {
   box-shadow: 0 0 0 1px var(--ring);
 }
 
-.pub-body {
+.entry-body {
   display: flex;
   flex-direction: column;
   gap: 5px;
   min-width: 0;
 }
 
-.pub-meta {
+.entry-meta {
   font-size: 0.71875rem;
   font-weight: 500;
   letter-spacing: 0.135em;
@@ -259,11 +288,11 @@ a:hover {
   color: var(--accent);
 }
 
-.pub-meta .sep {
+.entry-meta .sep {
   color: var(--faint);
 }
 
-.pub-title {
+.entry-title {
   margin: 0;
   font-size: 1.0625rem;
   font-weight: 400;
@@ -273,17 +302,24 @@ a:hover {
   text-wrap: pretty;
 }
 
-.pub-authors {
+.entry-sub {
   font-size: 0.9375rem;
   font-style: italic;
   color: var(--muted);
 }
 
-.pub-award {
+.entry-note {
   margin: 0;
   font-size: 0.875rem;
   font-style: italic;
   color: var(--accent);
+}
+
+.edu .entry-note {
+  display: flex;
+  flex-direction: column;
+  color: var(--muted);
+  margin-top: 3px;
 }
 
 .pub-links {
@@ -364,6 +400,10 @@ a:hover {
 
   .pub {
     grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .edu {
     gap: 14px;
   }
 

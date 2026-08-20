@@ -2,9 +2,13 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Publication from '../components/Publication.astro';
+import Education from '../components/Education.astro';
 import { SITE } from '../data/site';
 
 const pubs = (await getCollection('publications')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const education = (await getCollection('education')).sort(
   (a, b) => a.data.order - b.data.order,
 );
 ---
@@ -42,8 +46,17 @@ const pubs = (await getCollection('publications')).sort(
     <div class="section-head">
       <h2>Recent</h2>
     </div>
-    <div class="pub-list">
+    <div class="entry-list">
       {pubs.map((pub) => <Publication {...pub.data} />)}
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Education</h2>
+    </div>
+    <div class="entry-list">
+      {education.map((school) => <Education {...school.data} />)}
     </div>
   </section>
 </Base>

@@ -1,0 +1,18 @@
+# Wording follows LinkedIn, abbreviated to PhD rather than spelled out. `logo` is optional: entries without one fall back to a
+# monogram tile. Drop real logo files in public/assets/ and set `logo` to
+# use them.
+
+- id: phd-mit
+  order: 1
+  institution: "Massachusetts Institute of Technology"
+  degree: "PhD, Aeronautics and Astronautics, Autonomous Systems"
+  monogram: "MIT"
+  notes:
+    - "Advised by Prof. Nicholas Roy"
+    - "Robust Robotics Group, CSAIL"
+
+- id: bse-princeton
+  order: 2
+  institution: "Princeton University"
+  degree: "BSE, Electrical Engineering"
+  monogram: "P"

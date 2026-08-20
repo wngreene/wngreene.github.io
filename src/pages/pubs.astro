@@ -19,7 +19,7 @@ const pubs = (await getCollection('publications')).sort(
       <h2>All publications</h2>
       <span class="caps" style="color: var(--faint);">{pubs.length} total</span>
     </div>
-    <div class="pub-list">
+    <div class="entry-list">
       {pubs.map((pub) => <Publication {...pub.data} />)}
     </div>
   </section>

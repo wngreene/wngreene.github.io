@@ -2,38 +2,46 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Publication from '../components/Publication.astro';
+import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
 import { SITE } from '../data/site';
 
-const pubs = (await getCollection('publications')).sort(
+// Recent merges work and publications into one reverse-chronological list.
+// Experience wins ties, since a role spanning a year outranks a paper in it.
+const pubs = await getCollection('publications');
+const roles = await getCollection('experience');
+const education = (await getCollection('education')).sort(
   (a, b) => a.data.order - b.data.order,
 );
+
+const recent = [
+  ...roles.map((r) => ({ kind: 'role' as const, year: r.data.sortYear, rank: 0, data: r.data })),
+  ...pubs.map((p) => ({ kind: 'pub' as const, year: p.data.year, rank: 1, data: p.data })),
+].sort((a, b) => b.year - a.year || a.rank - b.rank || a.data.order - b.data.order);
 ---
 
 <Base title={SITE.title}>
   <Fragment slot="intro">
     <h1>W. Nicholas Greene</h1>
-    <div class="caps role">Robotics &middot; Computer Vision &middot; 3D Perception</div>
+    <div class="caps role">{SITE.tagline}</div>
     <div class="bio">
       <p>
-        Hi! My name is Nick Greene and I&rsquo;m a researcher and engineer in robotics,
-        computer vision, and 3D perception. I&rsquo;m currently working at a robotics startup
-        in the Boston area.
+        Hi! My name is Nick Greene and I&rsquo;m a research engineer interested in AI, ML, robotics,
+        and 3D perception. I&rsquo;m currently building something new at a stealth AI startup &mdash; stay tuned for more info!
+      </p>
+      <p>
+        Previously I spent four years at <a href="https://zoox.com">Zoox</a>, where I led a
+        team building voxel-based occupancy networks for short-range 3D perception on
+        autonomous vehicles. I
+        joined through the acquisition of <a href="https://zoox.com/journal/strio-ai-joins-zoox">Strio AI</a>, a company I
+        co-founded to build agricultural robots.
       </p>
       <p>
         I conducted my PhD studies in the <a href="http://groups.csail.mit.edu/rrg">Robust Robotics Group</a> at
         the <a href="http://www.mit.edu">MIT</a> <a href="http://www.csail.mit.edu">Computer Science and Artificial Intelligence
         Laboratory (CSAIL)</a> under <a href="https://www.csail.mit.edu/user/902">Professor Nicholas
         Roy</a>. My thesis explored leveraging prior information for real-time monocular
-        simultaneous localization and mapping (SLAM). I&rsquo;m also very interested in
-        augmented reality, variational methods, and deep learning.
-      </p>
-      <p>
-        Prior to joining <a href="http://www.csail.mit.edu">CSAIL</a>, I was an Assistant Technical
-        Staff member in the Advanced Sensor Techniques Group at
-        <a href="http://www.ll.mit.edu">MIT Lincoln Laboratory</a> where I developed state
-        estimation algorithms for passive sonar applications. I earned my BSE in
-        <a href="http://www.ee.princeton.edu">Electrical Engineering</a> from
-        <a href="http://www.princeton.edu">Princeton University</a>.
+        simultaneous localization and mapping (SLAM).
       </p>
     </div>
   </Fragment>
@@ -41,10 +49,22 @@ const pubs = (await getCollection('publications')).sort(
   <section>
     <div class="section-head">
       <h2>Recent</h2>
-      <a class="caps" href="/pubs.html">All seven</a>
     </div>
-    <div class="pub-list">
-      {pubs.map((pub) => <Publication {...pub.data} />)}
+    <div class="entry-list">
+      {
+        recent.map((item) =>
+          item.kind === 'role' ? <Experience {...item.data} /> : <Publication {...item.data} />,
+        )
+      }
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Education</h2>
+    </div>
+    <div class="entry-list">
+      {education.map((school) => <Education {...school.data} />)}
     </div>
   </section>
 </Base>

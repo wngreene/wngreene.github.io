@@ -1,0 +1,28 @@
+---
+interface Props {
+  logo?: string;
+  /** Alt text for a real logo; the placeholder is decorative. */
+  label?: string;
+}
+
+const { logo, label = '' } = Astro.props;
+---
+
+{
+  logo ? (
+    <img class="entry-media" src={logo} alt={label} width="64" height="64" loading="lazy" />
+  ) : (
+    /* No mark available: a crossed box, rather than inventing a monogram. */
+    <svg
+      class="entry-media entry-media-empty"
+      width="64"
+      height="64"
+      viewBox="0 0 64 64"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <rect x="0.5" y="0.5" width="63" height="63" fill="none" stroke="currentColor" />
+      <path d="M0.5 0.5 L63.5 63.5 M63.5 0.5 L0.5 63.5" stroke="currentColor" fill="none" />
+    </svg>
+  )
+}

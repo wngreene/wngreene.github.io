@@ -1,0 +1,18 @@
+# Wording follows LinkedIn, abbreviated to PhD rather than spelled out.
+# The SM is folded into the PhD there, so it is not a separate entry.
+# Entries without a `logo` render a crossed-box placeholder.
+
+- id: phd-mit
+  order: 1
+  institution: "Massachusetts Institute of Technology"
+  degree: "PhD, Aeronautics and Astronautics, Autonomous Systems"
+  logo: /assets/mit_logo.jpg
+  notes:
+    - "Advised by Prof. Nicholas Roy"
+    - "Robust Robotics Group, CSAIL"
+
+- id: bse-princeton
+  order: 2
+  institution: "Princeton University"
+  degree: "BSE, Electrical Engineering"
+  logo: /assets/princeton_logo.jpg

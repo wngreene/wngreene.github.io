@@ -1,0 +1,77 @@
+# Transcribed from LinkedIn. `sortYear` is the year the role ended (9999 for
+# a current role) and is what merges this list with publications on the home
+# page. Entries without a `logo` render a crossed-box placeholder.
+
+- id: stealth
+  order: 1
+  sortYear: 9999
+  role: "Co-Founder"
+  company: "Stealth Startup"
+  dates: "Feb 2026 – Present"
+  logo: /assets/stealth_logo.jpg
+  description: "Stealth AI startup."
+
+- id: zoox
+  order: 2
+  sortYear: 2026
+  role: "Senior Software Engineer"
+  company: "Zoox"
+  dates: "Mar 2022 – Feb 2026"
+  location: "San Francisco Bay Area"
+  logo: /assets/zoox_logo.jpg
+  description: >-
+    Led a cross-functional team that built a voxel-based occupancy network for
+    short-range 3D perception in autonomous vehicles, fusing Lidar, Radar, and
+    Camera data into a unified world model. Nearly eliminated false-positive
+    detections in adverse weather. Managed the full development lifecycle
+    across a team of 8+ engineers, from autolabeling pipelines to large-scale
+    model training and production deployment.
+
+- id: strio
+  order: 3
+  sortYear: 2022
+  role: "Co-Founder"
+  company: "Strio AI"
+  dates: "Jan 2021 – Mar 2022"
+  location: "Cambridge, MA"
+  logo: /assets/stealth_logo.jpg
+  description: >-
+    Built state estimation and perception systems for agricultural robots.
+    Acquired by Zoox.
+  links:
+    - { label: "Strio.AI joins Zoox", url: "https://zoox.com/journal/strio-ai-joins-zoox" }
+
+- id: niantic
+  order: 4
+  sortYear: 2019
+  role: "Research Intern"
+  company: "Niantic, Inc."
+  dates: "Sep 2018 – Jan 2019"
+  location: "Sunnyvale, CA"
+  logo: /assets/niantic_logo.jpg
+  description: >-
+    Developed robust place recognition and localization algorithms for
+    large-scale augmented reality on mobile devices.
+
+- id: draper
+  order: 5
+  sortYear: 2016
+  role: "Draper Fellow"
+  company: "Draper"
+  dates: "Sep 2014 – Sep 2016"
+  logo: /assets/draper_logo.jpg
+  description: >-
+    Developed real-time, dense 3D simultaneous localization and mapping (SLAM)
+    using passive monocular cameras for use on micro-aerial vehicles (MAVs).
+
+- id: lincoln
+  order: 6
+  sortYear: 2014
+  role: "Assistant Technical Staff"
+  company: "MIT Lincoln Laboratory"
+  dates: "Oct 2010 – Jul 2014"
+  location: "Greater Boston"
+  logo: /assets/lincoln_logo.jpg
+  description: >-
+    Contributed to research and development of passive sonar algorithms in the
+    Advanced Sensor Techniques Group.

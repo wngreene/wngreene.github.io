@@ -28,6 +28,7 @@
 
   --shell: 960px;
   --rail: 152px;
+  --entry-media: 120px;
   --rail-gap: 42px;
   --measure: 540px;
 }
@@ -47,6 +48,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  line-height: 1.5;
 }
 
 img {
@@ -90,6 +92,12 @@ a:hover {
 
 /* Masthead: rail + intro ------------------------------------------------- */
 
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .masthead {
   display: grid;
   grid-template-columns: var(--rail) minmax(0, 1fr);
@@ -113,6 +121,12 @@ a:hover {
   box-shadow: 0 0 0 1px var(--ring);
 }
 
+.rail-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .rail-nav {
   display: flex;
   flex-direction: column;
@@ -131,6 +145,31 @@ a:hover {
 .rail-nav a[aria-current='page'] {
   color: var(--ink);
   text-decoration-color: rgba(var(--ink-rgb), 0.30);
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.social a {
+  display: inline-flex;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.social a:hover {
+  color: var(--accent);
+}
+
+.social svg {
+  display: block;
+}
+
+/* Nudged to sit level with the nav's letterspaced caps above it. */
+.rail-social {
+  margin-top: 2px;
 }
 
 .intro {
@@ -187,16 +226,16 @@ a:hover {
   text-transform: uppercase;
 }
 
-.pub-list {
+.entry-list {
   display: flex;
   flex-direction: column;
   gap: 9px;
   margin-top: 14px;
 }
 
-.pub {
+/* Shared entry card. .pub and .edu differ only in their column layout. */
+.card {
   display: grid;
-  grid-template-columns: 138px minmax(0, 1fr);
   gap: 20px;
   align-items: start;
   padding: 16px;
@@ -205,21 +244,97 @@ a:hover {
   border-radius: 3px;
 }
 
+.pub {
+  grid-template-columns: var(--entry-media) minmax(0, 1fr);
+}
+
+.edu {
+  grid-template-columns: var(--entry-media) minmax(0, 1fr);
+  /* Top-aligned, as on LinkedIn. Centring made the logo drift down beside
+     the middle of a four-line entry while sitting level on a two-line one. */
+  align-items: start;
+}
+
+.entry-media {
+  margin-top: 2px;
+}
+
+/* Experience shares the education card: logo left, top-aligned, roman text
+   on one even rhythm. */
+.exp {
+  grid-template-columns: var(--entry-media) minmax(0, 1fr);
+  align-items: start;
+}
+
+.exp .entry-body {
+  gap: 0;
+}
+
+.exp .entry-title {
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.exp /* The site owner in an author list. 600 italic is loaded explicitly, so
+   this is a real face rather than a synthesised slant. */
+.author-self {
+  font-weight: 600;
+}
+
+.entry-sub {
+  font-style: normal;
+  line-height: 1.45;
+}
+
+.exp-dates {
+  line-height: 1.45;
+  font-size: 0.875rem;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.exp-desc {
+  margin-top: 9px;
+  line-height: 1.55;
+  font-size: 0.9375rem;
+  color: var(--body);
+  text-wrap: pretty;
+}
+
+.entry-media {
+  width: 64px;
+  height: 64px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 3px;
+  object-fit: contain;
+}
+
+.entry-media-empty {
+  color: var(--rule-strong);
+  border-radius: 0;
+}
+
 .pub-thumb {
-  width: 138px;
+  width: var(--entry-media);
   display: block;
   border-radius: 2px;
   box-shadow: 0 0 0 1px var(--ring);
 }
 
-.pub-body {
+.entry-body {
   display: flex;
   flex-direction: column;
   gap: 5px;
   min-width: 0;
 }
 
-.pub-meta {
+.entry-body :where(p) {
+  margin: 0;
+}
+
+.entry-meta {
+  line-height: 1.4;
   font-size: 0.71875rem;
   font-weight: 500;
   letter-spacing: 0.135em;
@@ -228,11 +343,11 @@ a:hover {
   color: var(--accent);
 }
 
-.pub-meta .sep {
+.entry-meta .sep {
   color: var(--faint);
 }
 
-.pub-title {
+.entry-title {
   margin: 0;
   font-size: 1.0625rem;
   font-weight: 400;
@@ -242,20 +357,62 @@ a:hover {
   text-wrap: pretty;
 }
 
-.pub-authors {
+/* The site owner in an author list. 600 italic is loaded explicitly, so
+   this is a real face rather than a synthesised slant. */
+.author-self {
+  font-weight: 600;
+}
+
+.entry-sub {
+  line-height: 1.4;
   font-size: 0.9375rem;
   font-style: italic;
   color: var(--muted);
 }
 
-.pub-award {
+.entry-note {
   margin: 0;
+  line-height: 1.45;
   font-size: 0.875rem;
   font-style: italic;
   color: var(--accent);
 }
 
+/* Education follows the LinkedIn block: institution and degree tight
+   together, a small step, then the advisory lines tight together. Spacing
+   comes from leading plus one margin, not from the flex gap, so all four
+   lines sit on one rhythm. Roman throughout - the italic here is a
+   publication convention for author names and does not belong. */
+.edu .entry-body {
+  gap: 0;
+}
+
+.edu .entry-title {
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.edu /* The site owner in an author list. 600 italic is loaded explicitly, so
+   this is a real face rather than a synthesised slant. */
+.author-self {
+  font-weight: 600;
+}
+
+.entry-sub {
+  font-style: normal;
+  line-height: 1.45;
+}
+
+.edu .entry-note {
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
 .pub-links {
+  line-height: 1.4;
   font-size: 0.875rem;
   color: var(--faint);
   margin-top: 5px;
@@ -281,7 +438,8 @@ a:hover {
 
 .footer-links {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 18px;
   font-weight: 500;
 }
 
@@ -298,7 +456,13 @@ a:hover {
     gap: 32px;
   }
 
-  .masthead {
+  main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.masthead {
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
   }
@@ -316,7 +480,13 @@ a:hover {
     flex: 0 0 104px;
   }
 
-  .rail-nav {
+  .rail-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rail-nav {
     gap: 8px;
   }
 
@@ -326,6 +496,10 @@ a:hover {
 
   .pub {
     grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .edu {
     gap: 14px;
   }
 

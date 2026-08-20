@@ -11,5 +11,19 @@ export default defineConfig({
   // Published papers cite these paths, so they must not change.
   build: { format: 'file' },
 
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // build.format 'file' serves /pubs.html, but the integration derives
+      // extensionless URLs from the route names. Without this the sitemap
+      // advertises /pubs and /experience, which 404.
+      serialize(item) {
+        const url = new URL(item.url);
+        if (url.pathname !== '/' && !url.pathname.endsWith('.html')) {
+          url.pathname = `${url.pathname.replace(/\/$/, '')}.html`;
+          item.url = url.href;
+        }
+        return item;
+      },
+    }),
+  ],
 });

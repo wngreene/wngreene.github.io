@@ -1,0 +1,31 @@
+---
+interface Props {
+  role: string;
+  company: string;
+  dates: string;
+  location?: string;
+  logo?: string;
+  monogram: string;
+  description?: string;
+}
+
+const { role, company, dates, location, logo, monogram, description } = Astro.props;
+---
+
+<article class="card exp">
+  {
+    logo ? (
+      <img class="edu-logo" src={logo} alt="" width="44" height="44" loading="lazy" />
+    ) : (
+      <span class="edu-logo edu-monogram" aria-hidden="true">
+        {monogram}
+      </span>
+    )
+  }
+  <div class="entry-body">
+    <h3 class="entry-title">{role}</h3>
+    <p class="entry-sub">{company}</p>
+    <p class="exp-dates">{dates}{location && <span class="sep"> · </span>}{location}</p>
+    {description && <p class="exp-desc">{description}</p>}
+  </div>
+</article>

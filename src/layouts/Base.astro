@@ -58,6 +58,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
                 aria-current={Astro.url.pathname === '/pubs.html' ? 'page' : undefined}
                 >Publications</a
               >
+              <a
+                href="/experience.html"
+                aria-current={Astro.url.pathname === '/experience.html' ? 'page' : undefined}
+                >Experience</a
+              >
               <a href={SITE.cv}>CV</a>
             </nav>
             <SocialLinks size={18} class="rail-social" />

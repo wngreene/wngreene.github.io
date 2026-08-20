@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Experience from '../components/Experience.astro';
+
+const roles = (await getCollection('experience')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<Base title="Experience" description="Work experience of W. Nicholas Greene.">
+  <Fragment slot="intro">
+    <h1>Experience</h1>
+    <div class="caps role">Robotics &middot; Computer Vision &middot; 3D Perception</div>
+  </Fragment>
+
+  <section>
+    <div class="section-head">
+      <h2>Work experience</h2>
+    </div>
+    <div class="entry-list">
+      {roles.map((r) => <Experience {...r.data} />)}
+    </div>
+  </section>
+</Base>

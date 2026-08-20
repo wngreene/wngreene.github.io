@@ -2,15 +2,22 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Publication from '../components/Publication.astro';
+import Experience from '../components/Experience.astro';
 import Education from '../components/Education.astro';
 import { SITE } from '../data/site';
 
-const pubs = (await getCollection('publications')).sort(
-  (a, b) => a.data.order - b.data.order,
-);
+// Recent merges work and publications into one reverse-chronological list.
+// Experience wins ties, since a role spanning a year outranks a paper in it.
+const pubs = await getCollection('publications');
+const roles = await getCollection('experience');
 const education = (await getCollection('education')).sort(
   (a, b) => a.data.order - b.data.order,
 );
+
+const recent = [
+  ...roles.map((r) => ({ kind: 'role' as const, year: r.data.sortYear, rank: 0, data: r.data })),
+  ...pubs.map((p) => ({ kind: 'pub' as const, year: p.data.year, rank: 1, data: p.data })),
+].sort((a, b) => b.year - a.year || a.rank - b.rank || a.data.order - b.data.order);
 ---
 
 <Base title={SITE.title}>
@@ -47,7 +54,11 @@ const education = (await getCollection('education')).sort(
       <h2>Recent</h2>
     </div>
     <div class="entry-list">
-      {pubs.map((pub) => <Publication {...pub.data} />)}
+      {
+        recent.map((item) =>
+          item.kind === 'role' ? <Experience {...item.data} /> : <Publication {...item.data} />,
+        )
+      }
     </div>
   </section>
 

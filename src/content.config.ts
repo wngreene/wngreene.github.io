@@ -37,4 +37,21 @@ const education = defineCollection({
   }),
 });
 
-export const collections = { publications, education };
+const experience = defineCollection({
+  loader: file('src/data/experience.yaml'),
+  schema: z.object({
+    order: z.number().int().positive(),
+    // Year the role ended; 9999 for a current one. Used to merge this
+    // collection with publications on the home page.
+    sortYear: z.number().int(),
+    role: z.string(),
+    company: z.string(),
+    dates: z.string(),
+    location: z.string().optional(),
+    logo: z.string().startsWith('/').optional(),
+    monogram: z.string().max(4),
+    description: z.string().optional(),
+  }),
+});
+
+export const collections = { publications, education, experience };

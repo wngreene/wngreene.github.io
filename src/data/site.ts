@@ -2,7 +2,7 @@
 export const SITE = {
   title: 'W. Nicholas Greene',
   /* Shown under the name on every page. */
-  tagline: 'AI · ML · Robotics',
+  tagline: 'AI · ML · Robotics · Perception',
   description:
     'W. Nicholas Greene — research engineer working in AI, ML, robotics, and 3D perception.',
   github: 'https://github.com/wngreene',

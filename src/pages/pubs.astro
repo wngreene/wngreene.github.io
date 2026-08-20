@@ -9,6 +9,18 @@ const pubs = (await getCollection('publications')).sort(
 ---
 
 <Base title="Publications" description="Publications by W. Nicholas Greene.">
-  <h1>Publications</h1>
-  {pubs.map((pub) => <Publication {...pub.data} />)}
+  <Fragment slot="intro">
+    <h1>Publications</h1>
+    <div class="caps role">Robotics &middot; Computer Vision &middot; 3D Perception</div>
+  </Fragment>
+
+  <section>
+    <div class="section-head">
+      <h2>All publications</h2>
+      <span class="caps" style="color: var(--faint);">{pubs.length} total</span>
+    </div>
+    <div class="pub-list">
+      {pubs.map((pub) => <Publication {...pub.data} />)}
+    </div>
+  </section>
 </Base>

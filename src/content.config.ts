@@ -12,6 +12,9 @@ const publications = defineCollection({
     // Validated against PEOPLE at build time: a typo fails the build.
     authors: z.array(z.enum(personKeys)).nonempty(),
     venue: z.string(),
+    // Honours such as a best-paper nomination. Kept out of `venue` so the
+    // venue line stays scannable.
+    award: z.string().optional(),
     year: z.number().int(),
     image: z.string().startsWith('/'),
     links: z

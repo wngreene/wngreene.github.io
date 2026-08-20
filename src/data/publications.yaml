@@ -16,7 +16,7 @@
   order: 2
   title: "MultiViewStereoNet: Fast Multi-View Stereo Depth Estimation using Incremental Viewpoint-Compensated Feature Extraction"
   authors: [wng, nickroy]
-  venue: "ICRA 2021"
+  venue: "ICRA"
   year: 2021
   image: /assets/mvsn.jpg
   links:
@@ -28,7 +28,8 @@
   order: 3
   title: "Metrically-Scaled Monocular SLAM using Learned Scale Factors"
   authors: [wng, nickroy]
-  venue: "ICRA 2020 (Finalist for Best Paper Award in Robot Vision)"
+  venue: "ICRA"
+  award: "Finalist for Best Paper Award in Robot Vision"
   year: 2020
   image: /assets/metric_mono_slam.png
   links:
@@ -39,7 +40,7 @@
   order: 4
   title: "FLaME: Fast Lightweight Mesh Estimation using Variational Smoothing on Delaunay Graphs"
   authors: [wng, nickroy]
-  venue: "ICCV 2017"
+  venue: "ICCV"
   year: 2017
   image: /assets/flame.png
   links:
@@ -62,7 +63,7 @@
   order: 6
   title: "Multi-Level Mapping: Real-time Dense Monocular SLAM"
   authors: [wng, kyel, lommel, nickroy]
-  venue: "ICRA 2016"
+  venue: "ICRA"
   year: 2016
   image: /assets/mlm.png
   links:
@@ -75,7 +76,7 @@
   order: 7
   title: "Simultaneous Tracking and Rendering: Real-time Monocular Localization for MAVs"
   authors: [kyel, wng, nickroy]
-  venue: "ICRA 2016"
+  venue: "ICRA"
   year: 2016
   image: /assets/star.png
   links:

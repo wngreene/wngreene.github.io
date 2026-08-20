@@ -19,6 +19,13 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
+    />
     <link rel="stylesheet" href="/css/main.css" />
 
     <meta property="og:type" content="website" />
@@ -30,33 +37,46 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
   </head>
 
   <body>
-    <nav class="site-nav">
-      <ul class="nav-links">
-        <li><a href="/">About</a></li>
-        <li><a href="/pubs.html">Publications</a></li>
-        <li><a href={SITE.cv}>CV</a></li>
-        <li><a href={SITE.github}>GitHub</a></li>
-      </ul>
-      <div class="nav-logos">
-        <a href="http://aeroastro.mit.edu">
-          <img src="/assets/aeroastro_logo_rect.jpg" alt="MIT AeroAstro" height="60" />
-        </a>
-        <a href="http://www.csail.mit.edu">
-          <img src="/assets/csail_logo.png" alt="MIT CSAIL" height="60" />
-        </a>
-      </div>
-    </nav>
+    <div class="shell">
+      {/* Portrait and nav sit in a rail beside the page intro; the main
+          content below breaks out to the full width of the shell. */}
+      <header class="masthead">
+        <div class="rail">
+          <img
+            class="rail-portrait"
+            src="/assets/me.jpg"
+            alt="W. Nicholas Greene"
+            width="152"
+            height="154"
+          />
+          <nav class="rail-nav">
+            <a href="/" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>About</a>
+            <a
+              href="/pubs.html"
+              aria-current={Astro.url.pathname === '/pubs.html' ? 'page' : undefined}
+              >Publications</a
+            >
+            <a href={SITE.cv}>CV</a>
+            <a href={SITE.github}>GitHub</a>
+          </nav>
+        </div>
+        <div class="intro">
+          <slot name="intro" />
+        </div>
+      </header>
 
-    <main class="container">
-      <slot />
-    </main>
+      <main>
+        <slot />
+      </main>
 
-    <footer class="site-footer">
-      <ul>
-        <li><a href={`mailto:${SITE.email}`}>email</a></li>
-        <li><a href={SITE.github}>github</a></li>
-        <li><a href={SITE.linkedin}>linkedin</a></li>
-      </ul>
-    </footer>
+      <footer class="site-footer">
+        <span class="footer-name">W. Nicholas Greene</span>
+        <div class="footer-links">
+          <a href={`mailto:${SITE.email}`}>Email</a>
+          <a href={SITE.github}>GitHub</a>
+          <a href={SITE.linkedin}>LinkedIn</a>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

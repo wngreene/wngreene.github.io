@@ -360,7 +360,6 @@ main {
   font-style: normal;
   line-height: 1.45;
   color: var(--muted);
-  margin-top: 10px;
 }
 
 .pub-links {

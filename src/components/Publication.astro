@@ -1,0 +1,35 @@
+---
+import { PEOPLE } from '../data/site';
+
+interface Props {
+  title: string;
+  authors: string[];
+  venue: string;
+  image: string;
+  links: { label: string; url: string }[];
+}
+
+const { title, authors, venue, image, links } = Astro.props;
+const people = authors.map((key) => PEOPLE[key as keyof typeof PEOPLE]);
+---
+
+<article class="pub">
+  <img class="pub-thumb" src={image} alt="" width="110" loading="lazy" />
+  <div class="pub-body">
+    <h3 class="pub-title">{title}</h3>
+    <p class="pub-authors">
+      {
+        people.map((person, i) => (
+          <>
+            {i > 0 && (i === people.length - 1 ? (people.length > 2 ? ', and ' : ' and ') : ', ')}
+            {'url' in person && person.url ? <a href={person.url}>{person.name}</a> : person.name}
+          </>
+        ))
+      }
+    </p>
+    <p class="pub-venue">{venue}</p>
+    <p class="pub-links">
+      [ {links.map((link, i) => (<>{i > 0 && ', '}<a href={link.url}>{link.label}</a></>))} ]
+    </p>
+  </div>
+</article>

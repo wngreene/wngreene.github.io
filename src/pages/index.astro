@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Publication from '../components/Publication.astro';
+import { SITE } from '../data/site';
+
+const pubs = (await getCollection('publications')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<Base title={SITE.title}>
+  <h1>W. Nicholas Greene</h1>
+
+  <img class="portrait" alt="W. Nicholas Greene" src="/assets/me.jpg" width="260" />
+
+  <p>
+    Hi! My name is Nick Greene and I&rsquo;m a researcher and engineer in robotics,
+    computer vision, and 3D perception. I&rsquo;m currently working at a robotics startup
+    in the Boston area.
+  </p>
+
+  <p>
+    I conducted my PhD studies in the <a href="http://groups.csail.mit.edu/rrg">Robust Robotics Group</a> at
+    the <a href="http://www.mit.edu">MIT</a> <a href="http://www.csail.mit.edu">Computer Science and Artificial Intelligence
+    Laboratory (CSAIL)</a> under <a href="https://www.csail.mit.edu/user/902">Professor Nicholas
+    Roy</a>. My thesis explored leveraging prior information for real-time monocular
+    simultaneous localization and mapping (SLAM). I&rsquo;m also very interested in
+    augmented reality, variational methods, and deep learning.
+  </p>
+
+  <p>
+    Prior to joining <a href="http://www.csail.mit.edu">CSAIL</a>, I was an Assistant Technical
+    Staff member in the Advanced Sensor Techniques Group at
+    <a href="http://www.ll.mit.edu">MIT Lincoln Laboratory</a> where I developed state
+    estimation algorithms for passive sonar applications. I earned my BSE in
+    <a href="http://www.ee.princeton.edu">Electrical Engineering</a> from
+    <a href="http://www.princeton.edu">Princeton University</a>.
+  </p>
+
+  <h2>Recent</h2>
+  {pubs.map((pub) => <Publication {...pub.data} />)}
+</Base>

@@ -329,10 +329,32 @@ main {
   color: var(--accent);
 }
 
+/* Education follows the LinkedIn block: institution and degree tight
+   together, a small step, then the advisory lines tight together. Spacing
+   comes from leading plus one margin, not from the flex gap, so all four
+   lines sit on one rhythm. Roman throughout - the italic here is a
+   publication convention for author names and does not belong. */
+.edu .entry-body {
+  gap: 0;
+}
+
+.edu .entry-title {
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.edu .entry-sub {
+  font-style: normal;
+  line-height: 1.45;
+}
+
 .edu .entry-note {
   display: flex;
   flex-direction: column;
+  font-style: normal;
+  line-height: 1.45;
   color: var(--muted);
+  margin-top: 7px;
 }
 
 .pub-links {

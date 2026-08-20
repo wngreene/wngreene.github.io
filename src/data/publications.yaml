@@ -1,0 +1,83 @@
+# Publications, newest first. `order` fixes the display sequence explicitly so
+# that entries sharing a year keep a deliberate order. `authors` are keys into
+# PEOPLE in site.ts.
+
+- id: phd-thesis
+  order: 1
+  title: "Leveraging Prior Information for Real-time Monocular Simultaneous Localization and Mapping"
+  authors: [wng]
+  venue: "PhD Thesis"
+  year: 2021
+  image: /assets/phd_thesis.png
+  links:
+    - { label: pdf, url: /data/papers/greene_phd_thesis.pdf }
+
+- id: multi-view-stereonet-icra-2021
+  order: 2
+  title: "MultiViewStereoNet: Fast Multi-View Stereo Depth Estimation using Incremental Viewpoint-Compensated Feature Extraction"
+  authors: [wng, nickroy]
+  venue: "ICRA 2021"
+  year: 2021
+  image: /assets/mvsn.jpg
+  links:
+    - { label: pdf, url: /data/papers/greene_icra21.pdf }
+    - { label: video, url: "https://youtu.be/aIw5wKyFHmo" }
+    - { label: code, url: "https://github.com/robustrobotics/multi_view_stereonet" }
+
+- id: metric-mono-slam-icra-2020
+  order: 3
+  title: "Metrically-Scaled Monocular SLAM using Learned Scale Factors"
+  authors: [wng, nickroy]
+  venue: "ICRA 2020 (Finalist for Best Paper Award in Robot Vision)"
+  year: 2020
+  image: /assets/metric_mono_slam.png
+  links:
+    - { label: pdf, url: /data/papers/greene_icra20.pdf }
+    - { label: video, url: "https://youtu.be/DD3vS8xaxSk" }
+
+- id: flame-iccv-2017
+  order: 4
+  title: "FLaME: Fast Lightweight Mesh Estimation using Variational Smoothing on Delaunay Graphs"
+  authors: [wng, nickroy]
+  venue: "ICCV 2017"
+  year: 2017
+  image: /assets/flame.png
+  links:
+    - { label: pdf, url: /data/papers/greene_iccv17.pdf }
+    - { label: video, url: "https://youtu.be/vB_F-Sj0AX0" }
+    - { label: slides, url: "/data/slides/2017.09.28_iros_presentation_flame_4x3_nobackup.pdf" }
+    - { label: code, url: "https://github.com/robustrobotics/flame" }
+
+- id: sm-thesis
+  order: 5
+  title: "Real-Time Dense Simultaneous Localization and Mapping using Monocular Cameras"
+  authors: [wng]
+  venue: "SM Thesis"
+  year: 2016
+  image: /assets/sm_thesis.png
+  links:
+    - { label: pdf, url: /data/papers/greene_sm_thesis_final.pdf }
+
+- id: mlm-icra-2016
+  order: 6
+  title: "Multi-Level Mapping: Real-time Dense Monocular SLAM"
+  authors: [wng, kyel, lommel, nickroy]
+  venue: "ICRA 2016"
+  year: 2016
+  image: /assets/mlm.png
+  links:
+    - { label: pdf, url: /data/papers/greene_icra16.pdf }
+    - { label: video, url: "https://youtu.be/qk2ViPVxmq0" }
+    - { label: slides, url: /data/slides/icra2016_mlm_3minute_slides.pdf }
+    - { label: poster, url: /data/posters/icra2016_mlm_poster.pdf }
+
+- id: star-icra-2016
+  order: 7
+  title: "Simultaneous Tracking and Rendering: Real-time Monocular Localization for MAVs"
+  authors: [kyel, wng, nickroy]
+  venue: "ICRA 2016"
+  year: 2016
+  image: /assets/star.png
+  links:
+    - { label: pdf, url: /data/papers/Ok16icra.pdf }
+    - { label: video, url: "https://youtu.be/p4ZEVVp77ds" }

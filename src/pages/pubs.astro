@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Publication from '../components/Publication.astro';
+
+const pubs = (await getCollection('publications')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<Base title="Publications" description="Publications by W. Nicholas Greene.">
+  <h1>Publications</h1>
+  {pubs.map((pub) => <Publication {...pub.data} />)}
+</Base>

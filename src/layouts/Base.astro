@@ -9,7 +9,11 @@ interface Props {
 }
 
 const { title, description = SITE.description } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+// build.format 'file' makes the home page's pathname '/index.html', but the
+// sitemap and every real link use the bare domain. Normalise so a crawler
+// sees one URL, not two.
+const path = Astro.url.pathname === '/index.html' ? '/' : Astro.url.pathname;
+const canonical = new URL(path, Astro.site).href;
 ---
 
 <!doctype html>

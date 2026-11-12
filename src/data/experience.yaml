@@ -2,14 +2,14 @@
 # a current role) and is what merges this list with publications on the home
 # page. Entries without a `logo` render a crossed-box placeholder.
 
-- id: stealth
+- id: versezero
   order: 1
   sortYear: 9999
   role: "Co-Founder"
-  company: "Stealth Startup"
+  company: "VerseZero"
   dates: "Feb 2026 – Present"
-  logo: /assets/stealth_logo.jpg
-  description: "Stealth AI startup."
+  logo: /assets/versezero_logo.jpg
+  description: "Building the next multiverse of games."
 
 - id: zoox
   order: 2
